@@ -6,7 +6,7 @@ Atualizado por: Douglas · Última atualização: 28/09/2026 (card 00 validado n
 |------|--------------------|--------------------|-------------|----------|----|
 | 00   | Scaffold + base    | `main`             | Douglas     | Concluído |    |
 | 01   | Login              | `tela/login`       |             | A fazer  |    |
-| 02   | Caixa (Scanner)    | `tela/caixa`       |             | A fazer  |    |
+| 02   | Caixa (Scanner)    | `tela/caixa`       | Douglas     | Em revisão |    |
 | 03   | Carrinho + Cotações| `tela/carrinho`    |             | A fazer  |    |
 | 04   | Confirmação        | `tela/confirmacao` |             | A fazer  |    |
 
