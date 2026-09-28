@@ -7,35 +7,35 @@ Executar no Claude Code com `NEXO_OWNER=1`. Objetivo: deixar o projeto rodando c
 
 ## Repositório
 
-- [ ] `git init`, branch `main`, commit inicial com o harness (CLAUDE.md, specs, tasks, .claude)
+- [x] `git init`, branch `main`, commit inicial com o harness (CLAUDE.md, specs, tasks, .claude)
 - [ ] Criar o repositório remoto e dar push
 - [ ] Proteger a `main` no GitHub (exigir PR para merge)
 
 ## Projeto Expo (D-09)
 
-- [ ] Gerar em pasta temporária sem sobrescrever o harness: `npx create-expo-app@latest _app --template blank-typescript@sdk-54`
-- [ ] Mover o conteúdo de `_app` para a raiz, mantendo os nossos `.gitignore`, `README.md` e `CLAUDE.md`; apagar `_app`
-- [ ] Instalar: `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar expo-camera firebase @react-native-async-storage/async-storage`
-- [ ] Configurar Expo Router: `"main": "expo-router/entry"` no `package.json`, `"scheme": "nexo-mobile"` no `app.json`, remover `App.tsx` e `index.ts` do template
-- [ ] `tsconfig.json` com `strict: true`
-- [ ] Permissão de câmera no `app.json` (plugin do `expo-camera` com texto em pt-BR)
+- [x] Gerar em pasta temporária sem sobrescrever o harness: `npx create-expo-app@latest _app --template blank-typescript@sdk-54`
+- [x] Mover o conteúdo de `_app` para a raiz, mantendo os nossos `.gitignore`, `README.md` e `CLAUDE.md`; apagar `_app`
+- [x] Instalar: `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar expo-camera firebase @react-native-async-storage/async-storage`
+- [x] Configurar Expo Router: `"main": "expo-router/entry"` no `package.json`, `"scheme": "nexo-mobile"` no `app.json`, remover `App.tsx` e `index.ts` do template
+- [x] `tsconfig.json` com `strict: true`
+- [x] Permissão de câmera no `app.json` (plugin do `expo-camera` com texto em pt-BR)
 
 ## Base compartilhada (conforme `specs/contratos.md`)
 
-- [ ] `types/index.ts`
-- [ ] `services/firebase.ts`: init com `process.env.EXPO_PUBLIC_*`, exporta `auth`, `db` e `buscarProdutoPorCodigo`
+- [x] `types/index.ts`
+- [x] `services/firebase.ts`: init com `process.env.EXPO_PUBLIC_*`, exporta `auth`, `db` e `buscarProdutoPorCodigo`
   - Auth com persistência em AsyncStorage (`initializeAuth` + `getReactNativePersistence`). Sem isso a sessão se perde ao fechar o app e o critério L-07 (sessão ativa vai direto para Caixa) não funciona
   - Evitar reinicialização em Fast Refresh (`getApps().length ? getApp() : initializeApp(...)`)
   - Se o TypeScript reclamar do export `getReactNativePersistence`, resolver pela documentação da versão instalada do Firebase
-- [ ] `services/auth.ts`
-- [ ] `services/exchange.ts` (URL da AwesomeAPI, `parseFloat` do `bid`, erro lançado se a resposta vier inválida)
-- [ ] `services/vendas.ts`
-- [ ] `context/CarrinhoContext.tsx` (regras D-07; `totalBRL` arredondado a 2 casas)
-- [ ] `constants/moedas.ts` (USD, EUR)
-- [ ] `app/_layout.tsx` (Stack + `CarrinhoProvider`)
-- [ ] `app/index.tsx` (loading enquanto `observarSessao` resolve; depois `replace('/caixa')` ou `replace('/login')`)
-- [ ] Placeholders: `app/login.tsx`, `app/caixa.tsx`, `app/carrinho.tsx`, `app/confirmacao.tsx` com título e um botão temporário para a próxima rota (cada dono substitui)
-- [ ] `components/ProdutoCard.tsx` e `components/CotacaoTag.tsx` como stubs simples
+- [x] `services/auth.ts`
+- [x] `services/exchange.ts` (URL da AwesomeAPI, `parseFloat` do `bid`, erro lançado se a resposta vier inválida)
+- [x] `services/vendas.ts`
+- [x] `context/CarrinhoContext.tsx` (regras D-07; `totalBRL` arredondado a 2 casas)
+- [x] `constants/moedas.ts` (USD, EUR)
+- [x] `app/_layout.tsx` (Stack + `CarrinhoProvider`)
+- [x] `app/index.tsx` (loading enquanto `observarSessao` resolve; depois `replace('/caixa')` ou `replace('/login')`)
+- [x] Placeholders: `app/login.tsx`, `app/caixa.tsx`, `app/carrinho.tsx`, `app/confirmacao.tsx` com título e um botão temporário para a próxima rota (cada dono substitui)
+- [x] `components/ProdutoCard.tsx` e `components/CotacaoTag.tsx` como stubs simples
 
 ## Firebase (Console)
 
@@ -68,7 +68,7 @@ service cloud.firestore {
 
 ## Verificação final
 
-- [ ] `npx tsc --noEmit` passa
+- [x] `npx tsc --noEmit` passa
 - [ ] `npx expo start` abre no Expo Go, navega pelos placeholders e loga com um usuário de teste
 - [ ] Commit na `main` e push
 - [ ] Atualizar `tasks/STATUS.md` (card 00 = Concluído) e avisar o grupo
