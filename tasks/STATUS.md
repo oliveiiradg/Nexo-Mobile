@@ -5,7 +5,7 @@ Atualizado por: Douglas · Última atualização: 28/09/2026
 | Card | Tela               | Branch             | Responsável | Status   | PR |
 |------|--------------------|--------------------|-------------|----------|----|
 | 00   | Scaffold + base    | `main`             | Douglas     | A fazer  |    |
-| 01   | Login              | `tela/login`       |             | A fazer  |    |
+| 01   | Login              | `tela/login`       | Douglas     | Em revisão |    |
 | 02   | Caixa (Scanner)    | `tela/caixa`       |             | A fazer  |    |
 | 03   | Carrinho + Cotações| `tela/carrinho`    |             | A fazer  |    |
 | 04   | Confirmação        | `tela/confirmacao` |             | A fazer  |    |
