@@ -1,10 +1,10 @@
 # Status do projeto
 
-Atualizado por: Douglas · Última atualização: 28/09/2026
+Atualizado por: Douglas · Última atualização: 28/09/2026 (card 00 validado no Expo Go, Android, SDK 54)
 
 | Card | Tela               | Branch             | Responsável | Status   | PR |
 |------|--------------------|--------------------|-------------|----------|----|
-| 00   | Scaffold + base    | `main`             | Douglas     | A fazer  |    |
+| 00   | Scaffold + base    | `main`             | Douglas     | Concluído |    |
 | 01   | Login              | `tela/login`       |             | A fazer  |    |
 | 02   | Caixa (Scanner)    | `tela/caixa`       |             | A fazer  |    |
 | 03   | Carrinho + Cotações| `tela/carrinho`    |             | A fazer  |    |
