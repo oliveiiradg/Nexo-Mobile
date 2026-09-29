@@ -7,8 +7,6 @@ import { useCarrinho } from '../context/CarrinhoContext'
 import { buscarCotacoes, converter } from '../services/exchange'
 import type { Cotacoes } from '../types'
 
-const INTERVALO_ATUALIZACAO_MS = 5 * 60 * 1000
-
 export default function Carrinho() {
   const { itens, totalBRL, removerItem } = useCarrinho()
 
@@ -39,8 +37,6 @@ export default function Carrinho() {
     }
 
     buscar()
-    const intervalo = setInterval(buscar, INTERVALO_ATUALIZACAO_MS)
-    return () => clearInterval(intervalo)
   }, [])
 
   const podeConfirmar = itens.length > 0 && cotacoes !== null

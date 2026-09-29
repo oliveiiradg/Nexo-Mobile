@@ -11,7 +11,7 @@
 
 ## Comportamento
 
-O operador vê os itens escaneados e o total convertido. Cotações via `buscarCotacoes()` ao montar a tela e a cada 5 min (D-01), com limpeza do intervalo ao sair. Falhas seguem D-06.
+O operador vê os itens escaneados e o total convertido. Cotações via `buscarCotacoes()` ao montar a tela; o cache com TTL de 1 hora (D-01) vive dentro do serviço, então a tela só chama a função — sem `setInterval`. Falhas seguem D-06.
 
 - Total em BRL vem de `totalBRL` do Context. Total USD/EUR: `converter(totalBRL, cotacao)`.
 - "Confirmar Venda" navega com `router.push({ pathname: '/confirmacao', params: { totalBRL, cotacaoUSD, cotacaoEUR } })`, todos como string. Os itens **não** vão por rota (D-02).
@@ -21,7 +21,7 @@ O operador vê os itens escaneados e o total convertido. Cotações via `buscarC
 
 - **R-01** Lista os itens do carrinho com nome, preço em BRL e quantidade
 - **R-02** Total em BRL, USD e EUR no rodapé
-- **R-03** Cotações buscadas ao abrir a tela (e a cada 5 min, D-01)
+- **R-03** Cotações buscadas ao abrir a tela, usando o cache de 1h do serviço quando válido (D-01)
 - **R-04** Loading indicator enquanto as cotações carregam
 - **R-05** API falhou → "Cotação indisponível", sem travar o app (regras de D-06)
 - **R-06** Botão de remover em cada linha (remove a linha inteira)
@@ -42,4 +42,4 @@ O operador vê os itens escaneados e o total convertido. Cotações via `buscarC
 3. Remover item → total recalcula.
 4. Modo avião ao abrir → "Cotação indisponível", USD/EUR como "—", confirmar desabilitado, app não trava.
 5. Com cotação carregada → "Confirmar Venda" abre a Confirmação com os três valores.
-6. Ficar na tela por mais de 5 min (ou reduzir o intervalo temporariamente em teste) → cotação atualiza.
+6. Sair do Carrinho e voltar depois de 1h (ou reduzir o TTL temporariamente em teste) → cotação busca de novo em vez de usar o cache.

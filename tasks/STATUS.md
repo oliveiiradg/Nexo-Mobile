@@ -1,13 +1,13 @@
 # Status do projeto
 
-Atualizado por: Douglas · Última atualização: 28/09/2026 (card 00 validado no Expo Go, Android, SDK 54)
+Atualizado por: Douglas · Última atualização: 28/09/2026 (card 03: cache de 1h substitui refresh por intervalo, D-01 revisada)
 
 | Card | Tela               | Branch             | Responsável | Status   | PR |
 |------|--------------------|--------------------|-------------|----------|----|
 | 00   | Scaffold + base    | `main`             | Douglas     | Concluído |    |
 | 01   | Login              | `tela/login`       | Douglas     | Em revisão |    |
 | 02   | Caixa (Scanner)    | `tela/caixa`       | Douglas     | Em revisão |    |
-| 03   | Carrinho + Cotações| `tela/carrinho`    |             | A fazer  |    |
+| 03   | Carrinho + Cotações| `tela/carrinho`    | Douglas     | Em revisão |    |
 | 04   | Confirmação        | `tela/confirmacao` |             | A fazer  |    |
 
 Status possíveis: A fazer · Em andamento · Em revisão · Concluído
