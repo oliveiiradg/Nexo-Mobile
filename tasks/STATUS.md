@@ -1,6 +1,6 @@
 # Status do projeto
 
-Atualizado por: Douglas · Última atualização: 03/10/2026 (card 03: provedor de cotações trocado para open.er-api.com, D-01 atualizada; `/revisar` aprovado)
+Atualizado por: Douglas · Última atualização: 03/10/2026 (card 04: implementado e validado em dispositivo real, gravação em `vendas` conferida no Firestore; `/revisar` aprovado)
 
 | Card | Tela               | Branch             | Responsável | Status   | PR |
 |------|--------------------|--------------------|-------------|----------|----|
@@ -8,7 +8,7 @@ Atualizado por: Douglas · Última atualização: 03/10/2026 (card 03: provedor 
 | 01   | Login              | `tela/login`       | Douglas     | Em revisão |    |
 | 02   | Caixa (Scanner)    | `tela/caixa`       | Douglas     | Em revisão |    |
 | 03   | Carrinho + Cotações| `tela/carrinho`    | Douglas     | Em revisão |    |
-| 04   | Confirmação        | `tela/confirmacao` |             | A fazer  |    |
+| 04   | Confirmação        | `tela/confirmacao` | Douglas     | Em revisão |    |
 
 Status possíveis: A fazer · Em andamento · Em revisão · Concluído
 
