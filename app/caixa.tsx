@@ -2,6 +2,7 @@ import { CameraView, useCameraPermissions, type BarcodeScanningResult } from 'ex
 import { router } from 'expo-router'
 import { useEffect, useRef, useState } from 'react'
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { logout } from '../services/auth'
 import { buscarProdutoPorCodigo } from '../services/firebase'
 import { useCarrinho } from '../context/CarrinhoContext'
@@ -15,6 +16,7 @@ type Feedback = {
 }
 
 export default function Caixa() {
+  const insets = useSafeAreaInsets()
   const [permission, requestPermission] = useCameraPermissions()
   const [travado, setTravado] = useState(false)
   const [feedback, setFeedback] = useState<Feedback | null>(null)
@@ -109,7 +111,7 @@ export default function Caixa() {
         </View>
       ) : null}
 
-      <View style={styles.rodape}>
+      <View style={[styles.rodape, { bottom: 32 + insets.bottom }]}>
         <Pressable style={styles.botaoCarrinho} onPress={() => router.push('/carrinho')}>
           <Text style={styles.botaoCarrinhoTexto}>Ver Carrinho ({quantidadeTotal})</Text>
         </Pressable>
