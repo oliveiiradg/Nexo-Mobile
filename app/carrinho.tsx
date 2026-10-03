@@ -1,6 +1,7 @@
 import { router } from 'expo-router'
 import { useEffect, useRef, useState } from 'react'
 import { ActivityIndicator, FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import CotacaoTag from '../components/CotacaoTag'
 import ProdutoCard from '../components/ProdutoCard'
 import { useCarrinho } from '../context/CarrinhoContext'
@@ -54,7 +55,7 @@ export default function Carrinho() {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['bottom']}>
       <Text style={styles.titulo}>Carrinho</Text>
 
       {itens.length === 0 ? (
@@ -98,7 +99,7 @@ export default function Carrinho() {
           <Text style={styles.botaoPrimarioTexto}>Confirmar Venda</Text>
         </Pressable>
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 

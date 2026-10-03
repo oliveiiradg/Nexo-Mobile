@@ -6,8 +6,8 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View,
 } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { login, observarSessao } from '../services/auth'
 
 const mensagemDeErro = (codigo: string): string => {
@@ -60,7 +60,7 @@ export default function Login() {
   const desabilitado = !email || !senha || carregando
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['bottom']}>
       <Text style={styles.titulo}>NEXO Mobile</Text>
 
       <TextInput
@@ -94,7 +94,7 @@ export default function Login() {
           <Text style={styles.botaoTexto}>Entrar</Text>
         )}
       </Pressable>
-    </View>
+    </SafeAreaView>
   )
 }
 
