@@ -1,6 +1,6 @@
 # Status do projeto
 
-Atualizado por: Douglas · Última atualização: 28/09/2026 (card 03: cache de 1h substitui refresh por intervalo, D-01 revisada)
+Atualizado por: Douglas · Última atualização: 03/10/2026 (card 03: provedor de cotações trocado para open.er-api.com, D-01 atualizada; `/revisar` aprovado)
 
 | Card | Tela               | Branch             | Responsável | Status   | PR |
 |------|--------------------|--------------------|-------------|----------|----|

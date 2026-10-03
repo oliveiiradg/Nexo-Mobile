@@ -16,6 +16,6 @@ Fechamento:
 
 - [x] Nenhum non-goal implementado
 - [x] `npx tsc --noEmit` passa
-- [ ] Validado pelos passos de "Como validar"
+- [x] Validado pelos passos de "Como validar"
 - [x] `/revisar` APROVADO
 - [ ] PR aberto para `main`

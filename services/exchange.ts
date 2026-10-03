@@ -1,7 +1,7 @@
 import type { Cotacoes } from '../types'
 
-const URL_COTACOES = 'https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL'
-const TTL_CACHE_MS = 60 * 60 * 1000 // 1 hora (D-01: evita bater rate limit da AwesomeAPI)
+const URL_COTACOES = 'https://open.er-api.com/v6/latest/USD'
+const TTL_CACHE_MS = 60 * 60 * 1000 // 1 hora (D-01: evita bater rate limit do provedor de cotações)
 
 // Cache em memória (module-level); não precisa persistir em disco.
 let cache: { cotacoes: Cotacoes; buscadoEm: number } | null = null
@@ -17,12 +17,15 @@ export const buscarCotacoes = async (): Promise<Cotacoes> => {
   }
 
   const dados = await resposta.json()
-  const usd = parseFloat(dados?.USDBRL?.bid)
-  const eur = parseFloat(dados?.EURBRL?.bid)
+  const brl = dados?.rates?.BRL
+  const eurRate = dados?.rates?.EUR
 
-  if (Number.isNaN(usd) || Number.isNaN(eur)) {
-    throw new Error('Resposta inválida da AwesomeAPI')
+  if (dados?.result !== 'success' || typeof brl !== 'number' || Number.isNaN(brl) || typeof eurRate !== 'number' || Number.isNaN(eurRate)) {
+    throw new Error('Resposta inválida do provedor de cotações')
   }
+
+  const usd = brl
+  const eur = brl / eurRate
 
   const cotacoes: Cotacoes = { usd, eur }
   cache = { cotacoes, buscadoEm: Date.now() }
